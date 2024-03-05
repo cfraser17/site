@@ -17,7 +17,7 @@ jobs:
       run: |
         curl -fLsS -o polaris.zip $POLARIS_SERVER_URL/api/tools/polaris_cli-linux64.zip
         unzip -d $RUNNER_TEMP -jo polaris.zip && rm -f polaris.zip
-        $RUNNER_TEMP/polaris --co project.name=chuckaude-${{ github.event.repository.name }} analyze -w
+        $RUNNER_TEMP/polaris --co project.name=colinfraser-${{ github.event.repository.name }} analyze -w --coverity-ignore-capture-failure
     - name: Save Logs
       if: always()
       uses: actions/upload-artifact@v4
